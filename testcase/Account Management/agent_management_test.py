@@ -71,26 +71,24 @@ class open_tab(unittest.TestCase):
             '#agentManager > div:nth-child(3) > div > div.el-dialog__footer > div > button').click()
         sleep(5)
 
-    # def change_status(self):
-    #     '''修改状态'''
-    #     driver.find_element_by_css_selector('#pane-agentManager > div.el-table.el-table--fit.el-table--enable-row-hover.el-table--enable-row-transition.el-table--small > div.el-table__body-wrapper.is-scrolling-none > table > tbody > tr:nth-child(2) > td > button:nth-child(4)').click()
-    #     status_frame = driver.find_element_by_css_selector('#agentManager > div:nth-child(7) > div > div.el-dialog__body')
-    #     driver.switch_to.frame(status_frame)
-    #     driver.find_element_by_css_selector('#agentManager > div:nth-child(7) > div > div.el-dialog__body > form > div:nth-child(1) > div > div > div > input')
-    #
-    #     driver.find_element_by_css_selector('#agentManager > div:nth-child(7) > div > div.el-dialog__body > form > div:nth-child(2) > div > div > input').clear()
-    #     driver.find_element_by_css_selector('#agentManager > div:nth-child(7) > div > div.el-dialog__body > form > div:nth-child(2) > div > div > input').send_keys('锁定你')
-    #     driver.find_element_by_css_selector('#agentManager > div:nth-child(7) > div > div.el-dialog__footer > div > button').click()
-    #
-    # def change_EmailPhone(self):
-    #     '''修改手机邮箱'''
-    #     driver.find_element_by_css_selector('#pane-agentManager > div.el-table.el-table--fit.el-table--enable-row-hover.el-table--enable-row-transition.el-table--small > div.el-table__body-wrapper.is-scrolling-none > table > tbody > tr:nth-child(2) > td > button:nth-child(5)').click()
-    #     emailpage = driver.find_element_by_css_selector('#agentManager > div:nth-child(8) > div > div.el-dialog__body')
-    #     driver.switch_to.frame(emailpage)
-    #     driver.find_element_by_css_selector('#agentManager > div:nth-child(8) > div > div.el-dialog__body > form > div:nth-child(1) > div > div > input').clear()
-    #     driver.find_element_by_css_selector('#agentManager > div:nth-child(8) > div > div.el-dialog__body > form > div:nth-child(1) > div > div > input').send_keys('kakaxi@qq.com')
-    #     driver.find_element_by_css_selector('#agentManager > div:nth-child(8) > div > div.el-dialog__body > form > div:nth-child(2) > div > div:nth-child(1) > input').clear()
-    #     driver.find_element_by_css_selector('#agentManager > div:nth-child(8) > div > div.el-dialog__body > form > div:nth-child(2) > div > div:nth-child(1) > input').send_keys('0755')
-    #     driver.find_element_by_css_selector('#agentManager > div:nth-child(8) > div > div.el-dialog__body > form > div:nth-child(2) > div > div:nth-child(2) > input').clear()
-    #     driver.find_element_by_css_selector('#agentManager > div:nth-child(8) > div > div.el-dialog__body > form > div:nth-child(2) > div > div:nth-child(2) > input').send_keys('12306')
-    #     driver.find_element_by_css_selector('#agentManager > div:nth-child(8) > div > div.el-dialog__footer > div > button').click()
+    def change_status(self):
+        '''修改状态'''
+        '''修改状态'''
+        driver.find_element_by_xpath(
+            '//*[@id="pane-agentManager"]/div[2]/div[3]/table/tbody/tr[3]/td/button[4]').click()
+        driver.find_element_by_xpath('//*[@id="agentManager"]/div[7]/div/div[2]/form/div[1]/div/div/div/input').click()
+        driver.find_element_by_xpath('/html/body/div[3]/div[1]/div[1]/ul/li[1]').click()
+        driver.find_element_by_xpath('//*[@id="agentManager"]/div[7]/div/div[2]/form/div[2]/div/div/input').clear()
+        sleep(3)
+        driver.find_element_by_xpath('//*[@id="agentManager"]/div[7]/div/div[2]/form/div[2]/div/div/input').send_keys(
+            '自动化测试')
+        sleep(3)
+        driver.find_element_by_xpath('//*[@id="agentManager"]/div[7]/div/div[3]/div/button').click()
+
+    def change_EmailPhone(self):
+        '''修改手机邮箱'''
+        driver.find_element_by_xpath('//*[@id="pane-agentManager"]/div[2]/div[3]/table/tbody/tr[2]/td/button[5]').click()
+        sleep(1)
+        driver.find_element_by_xpath('//*[@id="agentManager"]/div[9]/div/div[2]/div[2]/button').click()
+
+
