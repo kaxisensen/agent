@@ -17,7 +17,7 @@ class login_lgagent():
             '#login_form > div > div.login-body > ul > li:nth-child(2) > input').send_keys(psw)
         self.driver.find_element_by_css_selector(
             '#login_form > div > div.login-body > ul > li.clear > input').send_keys('66666')
-        sleep(1)
+        sleep(3)
         self.driver.find_element_by_css_selector('#login_form > div > div.login-body > button').click()
 
 

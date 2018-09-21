@@ -73,23 +73,28 @@ class open_tab(unittest.TestCase):
 
     def change_status(self):
         '''修改状态'''
-        '''修改状态'''
-        driver.find_element_by_xpath(
-            '//*[@id="pane-agentManager"]/div[2]/div[3]/table/tbody/tr[3]/td/button[4]').click()
+        driver.find_element_by_xpath('//*[@id="pane-agentManager"]/div[2]/div[3]/table/tbody/tr[2]/td/button[4]').click()
+        sleep(1)
         driver.find_element_by_xpath('//*[@id="agentManager"]/div[7]/div/div[2]/form/div[1]/div/div/div/input').click()
         driver.find_element_by_xpath('/html/body/div[3]/div[1]/div[1]/ul/li[1]').click()
         driver.find_element_by_xpath('//*[@id="agentManager"]/div[7]/div/div[2]/form/div[2]/div/div/input').clear()
         sleep(3)
-        driver.find_element_by_xpath('//*[@id="agentManager"]/div[7]/div/div[2]/form/div[2]/div/div/input').send_keys(
-            '自动化测试')
+        driver.find_element_by_xpath('//*[@id="agentManager"]/div[7]/div/div[2]/form/div[2]/div/div/input').send_keys('自动化测试')
         sleep(3)
         driver.find_element_by_xpath('//*[@id="agentManager"]/div[7]/div/div[3]/div/button').click()
+        sleep(2)
 
     def change_EmailPhone(self):
         '''修改手机邮箱'''
         driver.find_element_by_xpath('//*[@id="pane-agentManager"]/div[2]/div[3]/table/tbody/tr[2]/td/button[5]').click()
         sleep(1)
-        driver.find_element_by_xpath('//*[@id="agentManager"]/div[9]/div/div[2]/div[2]/button').click()
-
+        driver.find_element_by_xpath('//*[@id="agentManager"]/div[8]/div/div[2]/form/div[1]/div/div/input').clear()
+        driver.find_element_by_xpath('//*[@id="agentManager"]/div[8]/div/div[2]/form/div[1]/div/div/input').send_keys('huanghh@34era.com')
+        driver.find_element_by_xpath('//*[@id="agentManager"]/div[8]/div/div[2]/form/div[2]/div/div[1]/input').clear()
+        driver.find_element_by_xpath('//*[@id="agentManager"]/div[8]/div/div[2]/form/div[2]/div/div[1]/input').send_keys('100')
+        driver.find_element_by_xpath('//*[@id="agentManager"]/div[8]/div/div[2]/form/div[2]/div/div[2]/input').clear()
+        driver.find_element_by_xpath('//*[@id="agentManager"]/div[8]/div/div[2]/form/div[2]/div/div[2]/input').send_keys('123456')
+        driver.find_element_by_xpath('//*[@id="agentManager"]/div[8]/div/div[3]/div/button').click()
+        sleep(3)
 
 

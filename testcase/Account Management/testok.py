@@ -9,12 +9,13 @@ driver = webdriver.Chrome()
 userlogin = login.login_lgagent(driver)
 userlogin.loginon('huanghh','123456')
 sleep(3)
+driver.implicitly_wait(10)
 
 '''打开代理管理页'''
 driver.find_element_by_xpath('//*[@id="navLeftt"]/ul/li[2]/div/span').click()
 sleep(1)
 driver.find_element_by_xpath('//*[@id="navLeftt"]/ul/li[2]/ul/li[1]/span').click()
-sleep(1)
+sleep(3)
 # agent_title = driver.find_element_by_id('tab-agentManager').text
 # print('''当前页:'''+agent_title)
 
@@ -69,19 +70,34 @@ sleep(1)
 
 
 '''展開功能'''
-driver.find_element_by_xpath('//*[@id="pane-agentManager"]/div[2]/div[3]/table/tbody/tr/td[1]/div/div').click()
-sleep(2)
+driver.find_element_by_xpath('//*[@id="pane-agentManager"]/div[2]/div[3]/table/tbody/tr[1]/td[1]/div/div').click()
+sleep(5)
 
 
-'''修改状态'''
-driver.find_element_by_xpath('//*[@id="pane-agentManager"]/div[2]/div[3]/table/tbody/tr[3]/td/button[4]').click()
-driver.find_element_by_xpath('//*[@id="agentManager"]/div[7]/div/div[2]/form/div[1]/div/div/div/input').click()
-driver.find_element_by_xpath('/html/body/div[3]/div[1]/div[1]/ul/li[1]').click()
-driver.find_element_by_xpath('//*[@id="agentManager"]/div[7]/div/div[2]/form/div[2]/div/div/input').clear()
+# '''修改状态'''
+# driver.find_element_by_xpath('//*[@id="pane-agentManager"]/div[2]/div[3]/table/tbody/tr[2]/td/button[4]').click()
+# sleep(1)
+# driver.find_element_by_xpath('//*[@id="agentManager"]/div[7]/div/div[2]/form/div[1]/div/div/div/input').click()
+# driver.find_element_by_xpath('/html/body/div[3]/div[1]/div[1]/ul/li[1]').click()
+# driver.find_element_by_xpath('//*[@id="agentManager"]/div[7]/div/div[2]/form/div[2]/div/div/input').clear()
+# sleep(3)
+# driver.find_element_by_xpath('//*[@id="agentManager"]/div[7]/div/div[2]/form/div[2]/div/div/input').send_keys('自动化测试')
+# sleep(3)
+# driver.find_element_by_xpath('//*[@id="agentManager"]/div[7]/div/div[3]/div/button').click()
+# sleep(2)
+
+'''修改手机邮箱'''
+driver.find_element_by_xpath('//*[@id="pane-agentManager"]/div[2]/div[3]/table/tbody/tr[2]/td/button[5]').click()
+sleep(1)
+driver.find_element_by_xpath('//*[@id="agentManager"]/div[8]/div/div[2]/form/div[1]/div/div/input').clear()
+driver.find_element_by_xpath('//*[@id="agentManager"]/div[8]/div/div[2]/form/div[1]/div/div/input').send_keys('huanghh@34era.com')
+driver.find_element_by_xpath('//*[@id="agentManager"]/div[8]/div/div[2]/form/div[2]/div/div[1]/input').clear()
+driver.find_element_by_xpath('//*[@id="agentManager"]/div[8]/div/div[2]/form/div[2]/div/div[1]/input').send_keys('100')
+driver.find_element_by_xpath('//*[@id="agentManager"]/div[8]/div/div[2]/form/div[2]/div/div[2]/input').clear()
+driver.find_element_by_xpath('//*[@id="agentManager"]/div[8]/div/div[2]/form/div[2]/div/div[2]/input').send_keys('123456')
+driver.find_element_by_xpath('//*[@id="agentManager"]/div[8]/div/div[3]/div/button').click()
 sleep(3)
-driver.find_element_by_xpath('//*[@id="agentManager"]/div[7]/div/div[2]/form/div[2]/div/div/input').send_keys('自动化测试')
-sleep(3)
-driver.find_element_by_xpath('//*[@id="agentManager"]/div[7]/div/div[3]/div/button').click()
+
 
 driver.quit()
 
